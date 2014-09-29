@@ -1,7 +1,7 @@
-edX WebRTC-Widget
+Webforms Demo
 =================
 
-edX Widget
+Encapsulated Webforms with minimal footprint
 
 - run npm install and bower install from the project root
 - run grunt serve
