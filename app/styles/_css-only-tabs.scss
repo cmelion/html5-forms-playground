@@ -1,0 +1,148 @@
+/*!
+ * CSS Only Tabs
+ */
+#shindig-signup {
+
+  .tab-container {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    input[type=radio] {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+    }
+
+    .tabs {
+      position: relative;
+      z-index: 999;
+      white-space: nowrap;
+      font-size: 0;
+
+      label {
+        display: inline-block;
+        vertical-align: bottom;
+        margin-right: 4px;
+        margin-bottom: -1px;
+        margin-left: -1px;
+        background: #EEE;
+        padding: 12px 24px;
+        border: solid 1px #DDD;
+        border-radius: 5px 5px 0 0;
+        cursor: pointer;
+        background-color: #EEE;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 1px;
+        box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1) inset;
+        color: #666;
+      }
+
+      label:first-child {
+        margin-left: 0;
+      }
+
+      label:hover {
+        background-color: #DDD;
+      }
+
+    }
+
+    input:nth-child(1):checked ~ .tabs label:nth-child(1),
+    input:nth-child(2):checked ~ .tabs label:nth-child(2),
+    input:nth-child(3):checked ~ .tabs label:nth-child(3),
+    input:nth-child(4):checked ~ .tabs label:nth-child(4) {
+      padding: 14px 24px;
+      border-bottom-color: #FFF;
+      background: #FFF;
+      box-shadow: none;
+      color: #000;
+    }
+
+    .sections {
+      li {
+        display: none;
+        padding: 1em;
+        border: solid 1px #DDD;
+        border-radius: 0 5px 5px 5px;
+        background-color: #FFF;
+        box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.4);
+      }
+
+
+      li:nth-child(2) .well {
+
+        /* One Time Event Selected */
+        input:nth-child(1):checked ~ div:nth-of-type(3) {
+
+          /* Hide day of week picker and it's label */
+          > div:nth-of-type(2) {
+            visibility: hidden;
+          }
+          > label:nth-of-type(2) {
+            visibility: hidden;
+          }
+
+          > div:nth-of-type(1) label:nth-of-type(1) {
+            background-color: #0044CC;
+            color: #FFFFFF;
+            background-image: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+            outline: 0 none;
+          }
+        }
+
+        /* Recurring Event Selected */
+        input:nth-child(1) ~ div:nth-of-type(4){
+          /* Set Date Label to Beginning */
+          .event-date:before {
+            content: "Beginning";
+          }
+        }
+
+        /* One Time Event Selected */
+        input:nth-child(1):checked ~ div:nth-of-type(4){
+          /*  Hide date separator and End Date */
+          > div:nth-of-type(1) > div input:nth-of-type(2),
+          > div:nth-of-type(1) > div span:nth-of-type(1){
+            visibility: hidden;
+          }
+
+          /* Set Date Label to On */
+          .event-date:before {
+            content: "On";
+          }
+        }
+      }
+    }
+    input:nth-child(1):checked ~ .sections li:nth-child(1),
+    input:nth-child(2):checked ~ .sections li:nth-child(2),
+    input:nth-child(3):checked ~ .sections li:nth-child(3),
+    input:nth-child(4):checked ~ .sections li:nth-child(4) {
+      display: block;
+    }
+
+    .black-radial-gradient {
+      /* IE10 Consumer Preview */
+      background-image: -ms-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #585859 50%, #272829 75%, #202121 87.5%, #000000 100%);
+
+      /* Mozilla Firefox */
+      background-image: -moz-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #585859 50%, #272829 75%, #202121 87.5%, #000000 100%);
+
+      /* Opera */
+      background-image: -o-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #585859 50%, #272829 75%, #202121 87.5%, #000000 100%);
+
+      /* Webkit (Safari/Chrome 10) */
+      background-image: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, #FFFFFF), color-stop(0.5, #585859), color-stop(0.75, #272829), color-stop(0.875, #202121), color-stop(1, #000000));
+
+      /* Webkit (Chrome 11+) */
+      background-image: -webkit-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #585859 50%, #272829 75%, #202121 87.5%, #000000 100%);
+
+      /* W3C Markup, IE10 Release Preview */
+      background-image: radial-gradient(circle farthest-corner at center, #FFFFFF 0%, #585859 50%, #272829 75%, #202121 87.5%, #000000 100%);
+    }
+  }
+}

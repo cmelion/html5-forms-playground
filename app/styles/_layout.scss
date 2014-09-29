@@ -1,0 +1,149 @@
+/*!
+ * Shindig Widget Layout
+ */
+
+#shindig-signup {
+  [class^="icon-"]:before, [class*=" icon-"]:before {
+    content: "";
+  }
+
+  .well {
+    padding: 15px;
+    margin-bottom: 0px;
+  }
+
+  .form-horizontal .control-label {
+    width: 145px;
+  }
+
+  .control-group.required .control-label:after {
+    content: "*";
+    color: red;
+  }
+
+  .days-of-week-error {
+    color: red;
+  }
+
+  .contact-info {
+    color: white;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+  }
+
+  .centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+  }
+
+  /*
+   * Bootleg.css
+   * https://github.com/ryanseddon/bootleg
+   *
+   * WTFPL - http://sam.zoy.org/wtfpl/
+   */
+
+  /* Toggle buttons */
+
+  input[data-toggle]:checked + label,
+  input[data-toggle]:checked + label:active {
+    background-color: #0044CC;
+    color: #FFFFFF;
+    background-image: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    outline: 0 none;
+  }
+
+  /* Button groups */
+
+  .btn-group > .btn:first-of-type {
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    margin-left: 0;
+  }
+
+  /* Bootstrap checkboxex/radios appear within labels and we don't want to hide them */
+
+  :not(label) input[type="checkbox"],
+  :not(label) input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    /* Opera stills show an outline if not hidden */
+    visibility: hidden;
+  }
+
+  textarea.input-xlarge {
+    width: 297px;
+  }
+
+  input[type=date]::-webkit-inner-spin-button,
+  input[type=date]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=date], input[type=time] {
+    width: 124px;
+  }
+
+  input[type=date] ~ span.add-on,  input[type=time] ~ span.add-on {
+    height: 20px !important;
+  }
+
+}
+
+@media screen and (max-width:536px) {
+  #shindig-signup {
+    .controls {
+      &.day-of-week, &.event-type {
+        zoom: .88;
+      }
+    }
+
+    textarea.input-xlarge {
+      width: 242px;
+    }
+
+    .input-xlarge {
+      width: 215px;
+    }
+
+    #enddate, #endtime {
+      margin-left: 27px;
+    }
+  }
+}
+
+@media screen and (max-width:480px) {
+  #shindig-signup {
+    #enddate, #endtime {
+      margin-left: 0px;
+    }
+  }
+}
+
+@media screen and (max-width:376px) {
+  #shindig-signup {
+    .controls {
+      &.day-of-week, &.event-type {
+        zoom: .84;
+      }
+    }
+
+    #enddate, #endtime {
+      margin-left: 27px;
+    }
+  }
+}
