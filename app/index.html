@@ -323,8 +323,8 @@
                         // Inject it into the middle of our order of scripts to execute
                         // even if other scripts are listed after this one, and are already
                         // done loading.
-                        Modernizr.load('//code.jquery.com/jquery-1.11.1.min.js',
-                                       '//code.jquery.com/ui/1.10.4/jquery-ui.min.js');
+                        Modernizr.load(['//code.jquery.com/jquery-1.11.1.min.js',
+                                       '//code.jquery.com/ui/1.10.4/jquery-ui.min.js']);
                     }
                     window.setTimeout( function(){
                         $.webshims.setOptions('waitReady', false);
